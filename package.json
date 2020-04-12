@@ -1,0 +1,81 @@
+{
+	"name": "spikeprime",
+	"displayName": "spikeprime",
+	"description": "micropython for spikeprime",
+	"version": "0.0.1",
+	"publisher": "sanjayseshan",
+	"engines": {
+		"vscode": "^1.44.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:spikeprime.upload",
+		"onCommand:spikeprime.list",
+		"onCommand:spikeprime.delete",
+		"onCommand:spikeprime.start",
+		"onCommand:spikeprime.stop",
+		"onCommand:spikeprime.move",
+		"onCommand:spikeprime.fwinfo",
+		"onCommand:spikeprime.new"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "spikeprime.upload",
+				"title": "Upload to SPIKE PRIME"
+			},
+			{
+				"command": "spikeprime.list",
+				"title": "List SPIKE PRIME files"
+			},
+			{
+				"command": "spikeprime.delete",
+				"title": "Delete SPIKE PRIME file"
+			},
+			{
+				"command": "spikeprime.start",
+				"title": "Start SPIKE PRIME program"
+			},
+			{
+				"command": "spikeprime.stop",
+				"title": "Stop SPIKE PRIME program"
+			},
+			{
+				"command": "spikeprime.move",
+				"title": "Move SPIKE PRIME program"
+			},
+			{
+				"command": "spikeprime.fwinfo",
+				"title": "SPIKE PRIME Firmware Info"
+			},
+			{
+				"command": "spikeprime.new",
+				"title": "Create new SPIKE PRIME micropython program"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint src --ext ts",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.44.0",
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^7.0.2",
+		"@types/node": "^13.11.0",
+		"eslint": "^6.8.0",
+		"@typescript-eslint/parser": "^2.26.0",
+		"@typescript-eslint/eslint-plugin": "^2.26.0",
+		"glob": "^7.1.6",
+		"mocha": "^7.1.1",
+		"typescript": "^3.8.3",
+		"vscode-test": "^1.3.0"
+	}
+}
