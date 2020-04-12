@@ -9,3 +9,5 @@ The avaliable commands are: "Upload to SPIKE PRIME", "List SPIKE PRIME files", "
 ## Requirements
 
 This requires Python 3.8.2 with Add to Path option enabled. Works only on Windows right now. Install spike tools first from https://github.com/sanjayseshan/spike-tools
+
+For a pre-compiled build, go to https://github.com/sanjayseshan/spikeprime-vscode/releases
