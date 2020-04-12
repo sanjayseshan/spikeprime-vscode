@@ -1,6 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
+import * as fs from 'fs';
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -19,96 +20,138 @@ export function activate(context: vscode.ExtensionContext) {
 		// The code you place here will be executed every time your command is executed
 
 		// Display a message box to the user
-		const slot = await vscode.window.showInputBox({ prompt: 'Which slot should I upload to? (1-19)' });
-		const serial = await vscode.window.showInputBox({ prompt: 'Which port is the hub on? (e.g. COM25, etc.)' });
+		const slot = await vscode.window.showInputBox({ prompt: 'Which slot should I upload to? (0-19)' });
+		const serial = await vscode.window.showInputBox({ prompt: 'Which port is the hub on? (e.g. COM3, /dev/ttyACM0, /dev/tty.usbserialABC, etc.)' });
 		vscode.window.showInformationMessage('Uploading to hub at '+serial+' on slot '+slot+'.');
 		const terminal = vscode.window.createTerminal(`Ext Terminal #${NEXT_TERM_ID++}`);
 		var currentlyOpenTabfilePath = vscode.window.activeTextEditor?.document.uri.fsPath;
 		terminal.show();
 		terminal.show(true);
-		terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t "+serial+" upload "+currentlyOpenTabfilePath+" "+slot);
+		if (fs.existsSync("/bin/sh")) {
+			vscode.window.showInformationMessage("UNIX");
+			terminal.sendText("python3 ~/spiketools/spikejsonrpc.py -t "+serial+" upload '"+currentlyOpenTabfilePath+"' "+slot);
+		} else {
+			vscode.window.showInformationMessage("WINDOWS");
+			terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t "+serial+" upload \""+currentlyOpenTabfilePath+"\" "+slot);
+		}
 	});
 
 	let disposable2 = vscode.commands.registerCommand('spikeprime.list', async () => {
 		// The code you place here will be executed every time your command is executed
 
 		// Display a message box to the user
-		const serial = await vscode.window.showInputBox({ prompt: 'Which port is the hub on? (e.g. COM25, etc.)' });
+		const serial = await vscode.window.showInputBox({ prompt: 'Which port is the hub on? (e.g. COM3, /dev/ttyACM0, /dev/tty.usbserialABC, etc.)' });
 		const terminal = vscode.window.createTerminal(`Ext Terminal #${NEXT_TERM_ID++}`);
 		vscode.window.showInformationMessage('Working on hub at '+serial+'.');
 		var currentlyOpenTabfilePath = vscode.window.activeTextEditor?.document.uri.fsPath;
 		terminal.show();
 		terminal.show(true);
-		terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t "+serial+" fwinfo");
+		if (fs.existsSync("/bin/sh")) {
+			vscode.window.showInformationMessage("UNIX");
+			terminal.sendText("python3 ~/spiketools/spikejsonrpc.py -t "+serial+" fwinfo");
+		} else {
+			vscode.window.showInformationMessage("WINDOWS");
+  			terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t "+serial+" fwinfo");
+		}
 	});
 
 	let disposable3 = vscode.commands.registerCommand('spikeprime.delete', async () => {
 		// The code you place here will be executed every time your command is executed
 
 		// Display a message box to the user
-		const slot = await vscode.window.showInputBox({ prompt: 'Which slot should I delete? (1-19)' });
-		const serial = await vscode.window.showInputBox({ prompt: 'Which port is the hub on? (e.g. COM25, etc.)' });
+		const slot = await vscode.window.showInputBox({ prompt: 'Which slot should I delete? (0-19)' });
+		const serial = await vscode.window.showInputBox({ prompt: 'Which port is the hub on? (e.g. COM3, /dev/ttyACM0, /dev/tty.usbserialABC, etc.)' });
 		const terminal = vscode.window.createTerminal(`Ext Terminal #${NEXT_TERM_ID++}`);
 		var currentlyOpenTabfilePath = vscode.window.activeTextEditor?.document.uri.fsPath;
 		vscode.window.showInformationMessage('Deleting program at hub at '+serial+' on slot '+slot+'.');
 		terminal.show();
 		terminal.show(true);
-		terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t "+serial+" rm "+slot);
+		if (fs.existsSync("/bin/sh")) {
+			vscode.window.showInformationMessage("UNIX");
+			terminal.sendText("python3 ~/spiketools/spikejsonrpc.py -t "+serial+" rm "+slot);
+		} else {
+			vscode.window.showInformationMessage("WINDOWS");
+			terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t "+serial+" rm "+slot);
+		}
 	});
 
 	let disposable4 = vscode.commands.registerCommand('spikeprime.start', async () => {
 		// The code you place here will be executed every time your command is executed
 
 		// Display a message box to the user
-		const slot = await vscode.window.showInputBox({ prompt: 'Which program slot should I start? (1-19)' });
-		const serial = await vscode.window.showInputBox({ prompt: 'Which port is the hub on? (e.g. COM25, etc.)' });
+		const slot = await vscode.window.showInputBox({ prompt: 'Which program slot should I start? (0-19)' });
+		const serial = await vscode.window.showInputBox({ prompt: 'Which port is the hub on? (e.g. COM3, /dev/ttyACM0, /dev/tty.usbserialABC, etc.)' });
 		const terminal = vscode.window.createTerminal(`Ext Terminal #${NEXT_TERM_ID++}`);
 		var currentlyOpenTabfilePath = vscode.window.activeTextEditor?.document.uri.fsPath;
 		vscode.window.showInformationMessage('Starting program at hub at '+serial+' on slot '+slot+'.');
 		terminal.show();
 		terminal.show(true);
-		terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t "+serial+" start "+slot);
+		if (fs.existsSync("/bin/sh")) {
+			vscode.window.showInformationMessage("UNIX");
+			terminal.sendText("python3 ~/spiketools/spikejsonrpc.py -t "+serial+" start "+slot);
+		} else {
+			vscode.window.showInformationMessage("WINDOWS");
+			terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t "+serial+" start "+slot);
+		}
 	});
 
 	let disposable5 = vscode.commands.registerCommand('spikeprime.stop', async () => {
 		// The code you place here will be executed every time your command is executed
 
 		// Display a message box to the user
-		const serial = await vscode.window.showInputBox({ prompt: 'Which port is the hub on? (e.g. COM25, etc.)' });
+		const serial = await vscode.window.showInputBox({ prompt: 'Which port is the hub on? (e.g. COM3, /dev/ttyACM0, /dev/tty.usbserialABC, etc.)' });
 		const terminal = vscode.window.createTerminal(`Ext Terminal #${NEXT_TERM_ID++}`);
 		var currentlyOpenTabfilePath = vscode.window.activeTextEditor?.document.uri.fsPath;
 		vscode.window.showInformationMessage('Stopping program at hub at '+serial+'.');
 		terminal.show();
 		terminal.show(true);
-		terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t "+serial+" stop");
+		if (fs.existsSync("/bin/sh")) {
+			vscode.window.showInformationMessage("UNIX");
+			terminal.sendText("python3 ~/spiketools/spikejsonrpc.py -t "+serial+" stop");
+		} else {
+			vscode.window.showInformationMessage("WINDOWS");
+			terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t "+serial+" stop");
+		}
 	});
 
 	let disposable6 = vscode.commands.registerCommand('spikeprime.move', async () => {
 		// The code you place here will be executed every time your command is executed
 
 		// Display a message box to the user
-		const slot = await vscode.window.showInputBox({ prompt: 'Which program slot should I move? (1-19)' });
-		const slot2 = await vscode.window.showInputBox({ prompt: 'Which program slot should I move it to? (1-19)' });
-		const serial = await vscode.window.showInputBox({ prompt: 'Which port is the hub on? (e.g. COM25, etc.)' });
+		const slot = await vscode.window.showInputBox({ prompt: 'Which program slot should I move? (0-19)' });
+		const slot2 = await vscode.window.showInputBox({ prompt: 'Which program slot should I move it to? (0-19)' });
+		const serial = await vscode.window.showInputBox({ prompt: 'Which port is the hub on? (e.g. COM3, /dev/ttyACM0, /dev/tty.usbserialABC, etc.)' });
 		const terminal = vscode.window.createTerminal(`Ext Terminal #${NEXT_TERM_ID++}`);
 		var currentlyOpenTabfilePath = vscode.window.activeTextEditor?.document.uri.fsPath;
 		terminal.show();
 		terminal.show(true);
 		vscode.window.showInformationMessage('Moving program at hub at '+serial+' on slot '+slot+' to slot '+slot2+'.');
-		terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t "+serial+" mv "+slot+" "+slot2);
+		if (fs.existsSync("/bin/sh")) {
+			vscode.window.showInformationMessage("UNIX");
+			terminal.sendText("python3 ~/spiketools/spikejsonrpc.py -t "+serial+" mv "+slot+" "+slot2);
+		} else {
+			vscode.window.showInformationMessage("WINDOWS");
+			terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t "+serial+" mv "+slot+" "+slot2);
+		}
 	});	
 
 	let disposable7 = vscode.commands.registerCommand('spikeprime.fwinfo', async () => {
 		// The code you place here will be executed every time your command is executed
 
 		// Display a message box to the user
-		const serial = await vscode.window.showInputBox({ prompt: 'Which port is the hub on? (e.g. COM25, etc.)' });
+		const serial = await vscode.window.showInputBox({ prompt: 'Which port is the hub on? (e.g. COM3, /dev/ttyACM0, /dev/tty.usbserialABC, etc.)' });
 		const terminal = vscode.window.createTerminal(`Ext Terminal #${NEXT_TERM_ID++}`);
 		var currentlyOpenTabfilePath = vscode.window.activeTextEditor?.document.uri.fsPath;
 		vscode.window.showInformationMessage('Working on hub at '+serial+'.');
 		terminal.show();
 		terminal.show(true);
-		terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t "+serial+" fwinfo");
+		if (fs.existsSync("/bin/sh")) {
+			vscode.window.showInformationMessage("UNIX");
+			terminal.sendText("python3 ~/spiketools/spikejsonrpc.py -t "+serial+" fwinfo");
+		} else {
+			vscode.window.showInformationMessage("WINDOWS");
+			terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t "+serial+" fwinfo");
+		}
 	});
 
 	let disposable8 = vscode.commands.registerCommand('spikeprime.new', async () => {
@@ -121,7 +164,26 @@ export function activate(context: vscode.ExtensionContext) {
 		vscode.window.showInformationMessage('Creating new program '  +name);
 		terminal.show();
 		terminal.show(true);
-		terminal.sendText("copy C:\\\spiketools\\\hub\\\program_template.py " + name);
+		if (fs.existsSync("/bin/sh")) {
+			vscode.window.showInformationMessage("UNIX");
+			terminal.sendText("cp ~/spiketools/hub/program_template.py '" + name+"'");
+		} else {
+			vscode.window.showInformationMessage("WINDOWS");
+			terminal.sendText("copy C:\\\spiketools\\\hub\\\program_template.py \"" + name+"\"");
+		}
+	});
+
+	let disposable9 = vscode.commands.registerCommand('spikeprime.getos', async () => {
+		// The code you place here will be executed every time your command is executed
+
+		// Display a message box to the user
+		//vscode.
+		if (fs.existsSync("/bin/sh")) {
+			vscode.window.showInformationMessage("UNIX");
+		} else {
+			vscode.window.showInformationMessage("WINDOWS");
+		}
+				
 	});
 
 	context.subscriptions.push(disposable);
@@ -132,6 +194,8 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(disposable6);
 	context.subscriptions.push(disposable7);
 	context.subscriptions.push(disposable8);
+	context.subscriptions.push(disposable9);
+
 
 }
 

@@ -2,7 +2,7 @@
 	"name": "spikeprime",
 	"displayName": "spikeprime",
 	"description": "micropython for spikeprime",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "sanjayseshan",
 	"engines": {
 		"vscode": "^1.44.0"
@@ -18,7 +18,8 @@
 		"onCommand:spikeprime.stop",
 		"onCommand:spikeprime.move",
 		"onCommand:spikeprime.fwinfo",
-		"onCommand:spikeprime.new"
+		"onCommand:spikeprime.new",
+		"onCommand:spikeprime.getos"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -54,6 +55,10 @@
 			{
 				"command": "spikeprime.new",
 				"title": "Create new SPIKE PRIME micropython program"
+			},
+			{
+				"command": "spikeprime.getos",
+				"title": "Get OS type (UNIX or Windows)"
 			}
 		]
 	},
