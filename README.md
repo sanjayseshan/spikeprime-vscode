@@ -8,6 +8,8 @@ The avaliable commands are: "Upload to SPIKE PRIME", "List SPIKE PRIME files", "
 
 ## Requirements
 
-This requires Python 3.8.2 with Add to Path option enabled. Works only on Windows right now. Install spike tools first from https://github.com/sanjayseshan/spike-tools
+Download the latest VS Code (currently 1.44.0) from https://code.visualstudio.com/
 
-For a pre-compiled build, go to https://github.com/sanjayseshan/spikeprime-vscode/releases
+This requires Python 3.8.2 https://python.org/ with Add to Path option enabled. Works only on Windows right now. Install spike tools first from https://github.com/sanjayseshan/spike-tools
+
+Install the extension. For a pre-compiled extension build, go to https://github.com/sanjayseshan/spikeprime-vscode/releases
