@@ -4,16 +4,12 @@ This extension for VS Code will allow you to easily program the SPIKE PRIME in a
 
 ## Features
 
-The avaliable commands are:
-"Upload to SPIKE PRIME"
-"List SPIKE PRIME files"
-"Delete SPIKE PRIME file"
-"Start SPIKE PRIME program"
-"Stop SPIKE PRIME program"
-"Move SPIKE PRIME program"
-"SPIKE PRIME Firmware Info"
-"Create new SPIKE PRIME micropython program" (from template)
+The avaliable commands are: "Upload to SPIKE PRIME", "List SPIKE PRIME files", "Delete SPIKE PRIME file", "Start SPIKE PRIME program", "Stop SPIKE PRIME program", "Move SPIKE PRIME program", "SPIKE PRIME Firmware Info", and "Create new SPIKE PRIME micropython program" (from template).
 
 ## Requirements
 
-This requires Python 3.8.2 with Add to Path option enabled. Works only on Windows right now. Install spike tools first from https://github.com/sanjayseshan/spike-tools
+Download the latest VS Code (currently 1.44.0) from https://code.visualstudio.com/
+
+This requires Python 3.8.2 https://python.org/ with Add to Path option enabled. Works only on Windows right now. Install spike tools first from https://github.com/sanjayseshan/spike-tools
+
+Install the extension. For a pre-compiled extension build, go to https://github.com/sanjayseshan/spikeprime-vscode/releases
