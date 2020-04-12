@@ -77,7 +77,7 @@ You can try the other commands in the list as needed.
 1) Somewhere on your computer, make a folder for your programs.
 2) Open Visual Studio (VS) Code and do File --> "Open Folder" and select your new folder.
 3) Press Command-Shift-P and type "spike". You will see all the SPIKE PRIME commands. Select "Create new...program" and enter the name you want. Remember to end the file with the .py extension. You are ready to program, starting with the template:
-<img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/osx-vscode-vsix.JPG?raw=true">
+<img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/linux-vscode2.png?raw=true">
 
 ## Downloading to the hub
 1) Open terminal from Applications -> Utilities -> Terminal
