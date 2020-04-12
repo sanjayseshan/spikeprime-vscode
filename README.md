@@ -11,7 +11,7 @@ Note: This is known to work on Windows 10. Linux and Mac OS X support is not ava
 1) Download the latest VS Code (currently 1.44.0) from https://code.visualstudio.com/ and install it. The default options will work.
 2) Go to Control Panel and uninstall all exising versions of Python if needed
 3) Install the latest version of Python 3 from https://python.org/. Enable the "Add Python to PATH" option at the bottom of the install window and chose "Install Now" <img src="https://docs.python.org/3/_images/win_installer.png">
-4) Download https://github.com/sanjayseshan/spikeprime-tools/archive/master.zip and unzip it. Run the file install.bat to install to your hard drive on C:\. If the installer fails, try running as Administrator. If it continues to fail, it is probably because you forgot to add Python to your path or you installed Python 2.
+4) Download https://github.com/sanjayseshan/spikeprime-tools/archive/master.zip and unzip it. Run the file install.bat to install to your hard drive on C:\. If the installer fails, try running as Administrator. Windows Defender might flag it as an unrecognized installer. I promise it is safe, so you can just allow it to run. You can check the source code files for yourself if you want to make sure that it is safe to install. If it continues to fail, it is probably because you forgot to add Python to your path or you installed Python 2.
 5) Download https://github.com/sanjayseshan/spikeprime-vscode/releases/download/v0.0.1/spikeprime-0.0.1.vsix
 6) Open VS Code and press Ctrl-Shift-P. Type in "Install from VSIX" and then select the spikeprime-0.0.1.vsix file you downloaded.
 <img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/installvsix.JPG?raw=true">
