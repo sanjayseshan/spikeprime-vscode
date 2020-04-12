@@ -33,7 +33,7 @@ function activate(context) {
         var currentlyOpenTabfilePath = (_a = vscode.window.activeTextEditor) === null || _a === void 0 ? void 0 : _a.document.uri.fsPath;
         terminal.show();
         terminal.show(true);
-        terminal.sendText("python3 C:\\\spiketools\\\spikejsonrpc.py -t " + serial + " upload " + currentlyOpenTabfilePath + " " + slot);
+        terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t " + serial + " upload " + currentlyOpenTabfilePath + " " + slot);
     }));
     let disposable2 = vscode.commands.registerCommand('spikeprime.list', () => __awaiter(this, void 0, void 0, function* () {
         // The code you place here will be executed every time your command is executed
@@ -45,7 +45,7 @@ function activate(context) {
         var currentlyOpenTabfilePath = (_b = vscode.window.activeTextEditor) === null || _b === void 0 ? void 0 : _b.document.uri.fsPath;
         terminal.show();
         terminal.show(true);
-        terminal.sendText("python3 C:\\\spiketools\\\spikejsonrpc.py -t " + serial + " fwinfo");
+        terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t " + serial + " fwinfo");
     }));
     let disposable3 = vscode.commands.registerCommand('spikeprime.delete', () => __awaiter(this, void 0, void 0, function* () {
         // The code you place here will be executed every time your command is executed
@@ -58,7 +58,7 @@ function activate(context) {
         vscode.window.showInformationMessage('Deleting program at hub at ' + serial + ' on slot ' + slot + '.');
         terminal.show();
         terminal.show(true);
-        terminal.sendText("python3 C:\\\spiketools\\\spikejsonrpc.py -t " + serial + " rm " + slot);
+        terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t " + serial + " rm " + slot);
     }));
     let disposable4 = vscode.commands.registerCommand('spikeprime.start', () => __awaiter(this, void 0, void 0, function* () {
         // The code you place here will be executed every time your command is executed
@@ -71,7 +71,7 @@ function activate(context) {
         vscode.window.showInformationMessage('Starting program at hub at ' + serial + ' on slot ' + slot + '.');
         terminal.show();
         terminal.show(true);
-        terminal.sendText("python3 C:\\\spiketools\\\spikejsonrpc.py -t " + serial + " start " + slot);
+        terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t " + serial + " start " + slot);
     }));
     let disposable5 = vscode.commands.registerCommand('spikeprime.stop', () => __awaiter(this, void 0, void 0, function* () {
         // The code you place here will be executed every time your command is executed
@@ -83,7 +83,7 @@ function activate(context) {
         vscode.window.showInformationMessage('Stopping program at hub at ' + serial + '.');
         terminal.show();
         terminal.show(true);
-        terminal.sendText("python3 C:\\\spiketools\\\spikejsonrpc.py -t " + serial + " stop");
+        terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t " + serial + " stop");
     }));
     let disposable6 = vscode.commands.registerCommand('spikeprime.move', () => __awaiter(this, void 0, void 0, function* () {
         // The code you place here will be executed every time your command is executed
@@ -97,7 +97,7 @@ function activate(context) {
         terminal.show();
         terminal.show(true);
         vscode.window.showInformationMessage('Moving program at hub at ' + serial + ' on slot ' + slot + ' to slot ' + slot2 + '.');
-        terminal.sendText("python3 C:\\\spiketools\\\spikejsonrpc.py -t " + serial + " mv " + slot + " " + slot2);
+        terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t " + serial + " mv " + slot + " " + slot2);
     }));
     let disposable7 = vscode.commands.registerCommand('spikeprime.fwinfo', () => __awaiter(this, void 0, void 0, function* () {
         // The code you place here will be executed every time your command is executed
@@ -109,7 +109,7 @@ function activate(context) {
         vscode.window.showInformationMessage('Working on hub at ' + serial + '.');
         terminal.show();
         terminal.show(true);
-        terminal.sendText("python3 C:\\\spiketools\\\spikejsonrpc.py -t " + serial + " fwinfo");
+        terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t " + serial + " fwinfo");
     }));
     let disposable8 = vscode.commands.registerCommand('spikeprime.new', () => __awaiter(this, void 0, void 0, function* () {
         // The code you place here will be executed every time your command is executed

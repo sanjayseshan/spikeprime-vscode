@@ -26,7 +26,7 @@ export function activate(context: vscode.ExtensionContext) {
 		var currentlyOpenTabfilePath = vscode.window.activeTextEditor?.document.uri.fsPath;
 		terminal.show();
 		terminal.show(true);
-		terminal.sendText("python3 C:\\\spiketools\\\spikejsonrpc.py -t "+serial+" upload "+currentlyOpenTabfilePath+" "+slot);
+		terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t "+serial+" upload "+currentlyOpenTabfilePath+" "+slot);
 	});
 
 	let disposable2 = vscode.commands.registerCommand('spikeprime.list', async () => {
@@ -39,7 +39,7 @@ export function activate(context: vscode.ExtensionContext) {
 		var currentlyOpenTabfilePath = vscode.window.activeTextEditor?.document.uri.fsPath;
 		terminal.show();
 		terminal.show(true);
-		terminal.sendText("python3 C:\\\spiketools\\\spikejsonrpc.py -t "+serial+" fwinfo");
+		terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t "+serial+" fwinfo");
 	});
 
 	let disposable3 = vscode.commands.registerCommand('spikeprime.delete', async () => {
@@ -53,7 +53,7 @@ export function activate(context: vscode.ExtensionContext) {
 		vscode.window.showInformationMessage('Deleting program at hub at '+serial+' on slot '+slot+'.');
 		terminal.show();
 		terminal.show(true);
-		terminal.sendText("python3 C:\\\spiketools\\\spikejsonrpc.py -t "+serial+" rm "+slot);
+		terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t "+serial+" rm "+slot);
 	});
 
 	let disposable4 = vscode.commands.registerCommand('spikeprime.start', async () => {
@@ -67,7 +67,7 @@ export function activate(context: vscode.ExtensionContext) {
 		vscode.window.showInformationMessage('Starting program at hub at '+serial+' on slot '+slot+'.');
 		terminal.show();
 		terminal.show(true);
-		terminal.sendText("python3 C:\\\spiketools\\\spikejsonrpc.py -t "+serial+" start "+slot);
+		terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t "+serial+" start "+slot);
 	});
 
 	let disposable5 = vscode.commands.registerCommand('spikeprime.stop', async () => {
@@ -80,7 +80,7 @@ export function activate(context: vscode.ExtensionContext) {
 		vscode.window.showInformationMessage('Stopping program at hub at '+serial+'.');
 		terminal.show();
 		terminal.show(true);
-		terminal.sendText("python3 C:\\\spiketools\\\spikejsonrpc.py -t "+serial+" stop");
+		terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t "+serial+" stop");
 	});
 
 	let disposable6 = vscode.commands.registerCommand('spikeprime.move', async () => {
@@ -95,7 +95,7 @@ export function activate(context: vscode.ExtensionContext) {
 		terminal.show();
 		terminal.show(true);
 		vscode.window.showInformationMessage('Moving program at hub at '+serial+' on slot '+slot+' to slot '+slot2+'.');
-		terminal.sendText("python3 C:\\\spiketools\\\spikejsonrpc.py -t "+serial+" mv "+slot+" "+slot2);
+		terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t "+serial+" mv "+slot+" "+slot2);
 	});	
 
 	let disposable7 = vscode.commands.registerCommand('spikeprime.fwinfo', async () => {
@@ -108,7 +108,7 @@ export function activate(context: vscode.ExtensionContext) {
 		vscode.window.showInformationMessage('Working on hub at '+serial+'.');
 		terminal.show();
 		terminal.show(true);
-		terminal.sendText("python3 C:\\\spiketools\\\spikejsonrpc.py -t "+serial+" fwinfo");
+		terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t "+serial+" fwinfo");
 	});
 
 	let disposable8 = vscode.commands.registerCommand('spikeprime.new', async () => {
