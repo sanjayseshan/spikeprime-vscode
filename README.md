@@ -58,7 +58,7 @@ Derivatives such as Ubuntu will work also with these instructions.
 2) Locate the serial port using "sudo dmesg" in terminal. Look towards the end of the id of a USB ACM device and its id (e.g. ttyACM0). In the example below, the serial id would be /dev/ttyACM0 *do not forget the /dev part*
 <img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/dmesg.png?raw=true">
 3) Press Ctrl-Shift-P and type "spike". Chose to "Upload to SPIKE PRIME". Enter in the program slot id you want to upload to (similar to the SPIKE PRIME software - between 1 and 19 inclusive) and the serial port as determined in step 2. The process will be shown in the terminal below.
-<img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/upload.JPG?raw=true">
+<img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/upload-linux.png?raw=true">
 If it takes longer than ~30 seconds, try cancelling the command using Ctrl-C a couple times in the terminal window below and try again. If it continues to not work or give an error, you might have the wrong serial port, your firmware is outdated, or you have the serial port open elsewhere (e.g. screen or a modem software).
 
 You can try the other commands in the list as needed.
