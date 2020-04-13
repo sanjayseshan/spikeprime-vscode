@@ -18,7 +18,7 @@ Tested on Windows 10.
 <img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/installvsix.JPG?raw=true">
 7) Restart your PC
 
-## Actually programming
+## Your first program
 1) Somewhere on your computer, make a folder for your programs.
 2) Open Visual Studio (VS) Code and do File --> "Open Folder" and select your new folder.
 3) Press Ctrl-Shift-P and type "spike". You will see all the SPIKE PRIME commands. Select "Create new...program" and enter the name you want. Remember to end the file with the .py extension. You are ready to program, starting with the template:
@@ -47,7 +47,7 @@ Tested on Debian 10 Buster.
 4) Open VS Code and press Ctrl-Shift-P. Type in "Install from VSIX" and then select the spikeprime-0.0.2.vsix file you downloaded.
 <img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/linux-vscode1.png?raw=true">
 
-## Actually programming
+## Your first program
 1) Somewhere on your computer, make a folder for your programs.
 2) Open Visual Studio (VS) Code and do File --> "Open Folder" and select your new folder.
 3) Press Ctrl-Shift-P and type "spike". You will see all the SPIKE PRIME commands. Select "Create new...program" and enter the name you want. Remember to end the file with the .py extension. You are ready to program, starting with the template:
@@ -73,7 +73,7 @@ Tested on MacOS 10.14 Mojave and 10.15 Catalina.
 6) Open VS Code and press Command-Shift-P. Type in "Install from VSIX" and then select the spikeprime-0.0.2.vsix file you downloaded.
 <img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/osx-vscode-vsix.JPG?raw=true">
 
-## Actually programming
+## Your first program
 1) Somewhere on your computer, make a folder for your programs.
 2) Open Visual Studio (VS) Code and do File --> Open and select your new folder.
 3) Press Command-Shift-P and type "spike". You will see all the SPIKE PRIME commands. Select "Create new...program" and enter the name you want. Remember to end the file with the .py extension. You are ready to program, starting with the template:
