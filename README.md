@@ -26,7 +26,7 @@ Tested on Windows 10.
 <img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/image.png?raw=true">
 
 ## Downloading to the hub
-1) Plug in the SPIKE PRIME using USB (BT is not tested and probably will not work with this method)
+1) Plug in the SPIKE PRIME using USB. Bluetooth does work, but can be a but unstable, and it will show up under Ports also. Just use the standard "Add Bluetooth Device" method to add the hub.
 2) Locate the serial port through Device Manager (you can find this in the Start Menu). Under ports, look for something named USB Serial Port or USB Serial Device. If there are many, try disconnecting the hub and reconnecting it to see which one disappears. Note down the id, which will be COMX (e.g. COM3, COM25, etc.).
 <img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/devicemanager.JPG?raw=true">
 3) Press Ctrl-Shift-P and type "spike". Chose to "Upload to SPIKE PRIME". Enter in the program slot id you want to upload to (similar to the SPIKE PRIME software - between 1 and 19 inclusive) and the serial port as determined in step 2. The process will be shown in the terminal below.
@@ -55,7 +55,7 @@ Tested on Debian 10 Buster.
 <img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/linux-vscode2.png?raw=true">
 
 ## Downloading to the hub
-1) Plug in the SPIKE PRIME using USB (BT is not tested and probably will not work with this method)
+1) Plug in the SPIKE PRIME using USB. Bluetooth does work, but can be a but unstable. Just use the standard "Add Bluetooth Device" method to add the hub. Look for the serial port address under its settings and/or dmesg.
 2) Locate the serial port using "sudo dmesg" in terminal. Look towards the end of the id of a USB ACM device and its id (e.g. ttyACM0). In the example below, the serial id would be /dev/ttyACM0 *do not forget the /dev part*
 <img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/dmesg.png?raw=true">
 3) Press Ctrl-Shift-P and type "spike". Chose to "Upload to SPIKE PRIME". Enter in the program slot id you want to upload to (similar to the SPIKE PRIME software - between 1 and 19 inclusive) and the serial port as determined in step 2. The process will be shown in the terminal below.
@@ -83,7 +83,7 @@ Tested on MacOS 10.14 Mojave and 10.15 Catalina.
 ## Downloading to the hub
 1) Open terminal from Applications -> Utilities -> Terminal
 2) Run the following command: "ls /dev/tty.usb*" <img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/osx-term-usb1.png?raw=true">
-3) Plug in the SPIKE PRIME using USB
+3) Plug in the SPIKE PRIME using USB. Bluetooth does work, but can be a but unstable. Just use the standard "Add Bluetooth Device" method to add the hub. You should be able to find the port by broadening the search to "ls /dev/tty*".
 4) Run the following command: "ls /dev/tty.usb*" again and see what was added to the list. That is your serial port id. For example, it might say "/dev/tty.usbmodem366C377532381". <img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/osx-term-usb2.png?raw=true">
 5) Press Command-Shift-P and type "spike". Chose to "Upload to SPIKE PRIME". Enter in the program slot id you want to upload to (similar to the SPIKE PRIME software - between 1 and 19 inclusive) and the serial port as determined in step 2. The process will be shown in the terminal below.
 <img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/vscode-upload-osx.png?raw=true">
