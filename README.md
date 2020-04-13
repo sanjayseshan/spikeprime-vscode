@@ -12,7 +12,7 @@ The avaliable commands are: "Upload to SPIKE PRIME", "List SPIKE PRIME files", "
 1) Download the latest VS Code (currently 1.44.0) from https://code.visualstudio.com/ and install it. The default options will work.
 2) Go to Control Panel and uninstall all exising versions of Python if needed
 3) Install the latest version of Python 3 from https://python.org/. Enable the "Add Python to PATH" option at the bottom of the install window and chose "Install Now" <img src="https://docs.python.org/3/_images/win_installer.png">
-4) Download https://github.com/sanjayseshan/spikeprime-tools/archive/v0.0.3.zip and unzip it. Run the file (double-click) install.windows.bat to install to your hard drive on C:\. If the installer fails, try running as Administrator. Windows Defender might flag it as an unrecognized installer. I promise it is safe, so you can just allow it to run. You can check the source code files for yourself if you want to make sure that it is safe to install. If it continues to fail, it is probably because you forgot to add Python to your path or you installed Python 2.
+4) Download https://github.com/sanjayseshan/spikeprime-tools/archive/v0.0.3.zip and unzip it. Run the file (double-click) install.windows.bat to install to your hard drive on C:\. If the installer fails, try running as Administrator. Windows Defender might flag it as an unrecognized installer. Just allow it to run. If it continues to fail, it is probably because you forgot to add Python to your path or you installed Python 2.
 5) Download https://github.com/sanjayseshan/spikeprime-vscode/releases/download/v0.0.2/spikeprime-0.0.2.vsix
 6) Open VS Code and press Ctrl-Shift-P. Type in "Install from VSIX" and then select the spikeprime-0.0.2.vsix file you downloaded.
 <img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/installvsix.JPG?raw=true">
@@ -68,7 +68,7 @@ You can try the other commands in the list as needed.
 ## Installation
 1) Download the latest VS Code (currently 1.44.0) from https://code.visualstudio.com/ and install it. The default options will work.
 2) Install the latest version of Python 3 from https://python.org/. <img src="https://cdn.osxdaily.com/wp-content/uploads/2018/06/install-python3-on-mac.jpg">
-4) Download https://github.com/sanjayseshan/spikeprime-tools/releases/download/v0.0.3/spikeprime-tools.tgz and extract it. Run the file (double-click) install.macos.sh to install to your home folder. 
+4) Download https://github.com/sanjayseshan/spikeprime-tools/releases/download/v0.0.3/spikeprime-tools.tgz and extract it. Run the file (double-click) install.macos.command to install to your home folder. 
 5) Download https://github.com/sanjayseshan/spikeprime-vscode/releases/download/v0.0.2/spikeprime-0.0.2.vsix
 6) Open VS Code and press Command-Shift-P. Type in "Install from VSIX" and then select the spikeprime-0.0.2.vsix file you downloaded.
 <img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/osx-vscode-vsix.JPG?raw=true">
