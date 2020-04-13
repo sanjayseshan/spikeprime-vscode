@@ -7,7 +7,7 @@ This extension for VS Code will allow you to easily program the SPIKE PRIME in a
 The avaliable commands are: "Upload to SPIKE PRIME", "List SPIKE PRIME files", "Delete SPIKE PRIME file", "Start SPIKE PRIME program", "Stop SPIKE PRIME program", "Move SPIKE PRIME program", "SPIKE PRIME Firmware Info", and "Create new SPIKE PRIME micropython program" (from template). The end result is that you can run micropython programs on your hub just like a standard scratch program
 
 # Windows
-
+Tested on Windows 10.
 ## Installation
 1) Download the latest VS Code (currently 1.44.0) from https://code.visualstudio.com/ and install it. The default options will work.
 2) Go to Control Panel and uninstall all exising versions of Python if needed
@@ -36,7 +36,7 @@ You can try the other commands in the list as needed.
 
 
 # Debian Linux
-Derivatives such as Ubuntu will work also with these instructions.
+Tested on Debian 10 Buster.
 
 ## Installation
 1) Download the latest VS Code (currently 1.44.0) from https://code.visualstudio.com/ and install it (e.g. sudo dpkg -i code_1.44.0-XXX_amd64.deb or open with Software Installer)
@@ -63,8 +63,8 @@ If it takes longer than ~30 seconds, try cancelling the command using Ctrl-C a c
 
 You can try the other commands in the list as needed.
 
-# Mac OS X
-
+# MacOS
+Tested on MacOS 10.14 Mojave and 10.15 Catalina.
 ## Installation
 1) Download the latest VS Code (currently 1.44.0) from https://code.visualstudio.com/ and install it. The default options will work.
 2) Install the latest version of Python 3 from https://python.org/. <img src="https://cdn.osxdaily.com/wp-content/uploads/2018/06/install-python3-on-mac.jpg">
