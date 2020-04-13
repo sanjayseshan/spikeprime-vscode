@@ -87,7 +87,7 @@ You can try the other commands in the list as needed.
 4) Run the following command: "ls /dev/tty.usb*" again and see what was added to the list. That is your serial port id. For example, it might say "/dev/tty.usbmodem366C377532381".
 <img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/osx-term-usb2.png?raw=true">
 5) Press Command-Shift-P and type "spike". Chose to "Upload to SPIKE PRIME". Enter in the program slot id you want to upload to (similar to the SPIKE PRIME software - between 1 and 19 inclusive) and the serial port as determined in step 2. The process will be shown in the terminal below.
-<img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/upload.JPG?raw=true">
+<img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/vscode-upload-osx.png?raw=true">
 If it takes longer than ~30 seconds, try cancelling the command using Ctrl-C a couple times in the terminal window below and try again. If it continues to not work or give an error, you might have the wrong serial port, your firmware is outdated, or you have a SPIKE PRIME software window open.
 
 You can try the other commands in the list as needed.
