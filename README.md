@@ -82,10 +82,11 @@ You can try the other commands in the list as needed.
 ## Downloading to the hub
 1) Open terminal from Applications -> Utilities -> Terminal
 2) Run the following command: "ls /dev/tty.usb*"
-<img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/osx-term-usb.png?raw=true">
+<img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/osx-term-usb1.png?raw=true">
 3) Plug in the SPIKE PRIME using USB
 4) Run the following command: "ls /dev/tty.usb*" again and see what was added to the list. That is your serial port id. For example if it were to list "tty.usbserial-A700dYoR", your serial port is "/dev/tty.usbserial-A700dYoR", which is what you will use in the future.
-3) Press Command-Shift-P and type "spike". Chose to "Upload to SPIKE PRIME". Enter in the program slot id you want to upload to (similar to the SPIKE PRIME software - between 1 and 19 inclusive) and the serial port as determined in step 2. The process will be shown in the terminal below.
+<img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/osx-term-usb2.png?raw=true">
+5) Press Command-Shift-P and type "spike". Chose to "Upload to SPIKE PRIME". Enter in the program slot id you want to upload to (similar to the SPIKE PRIME software - between 1 and 19 inclusive) and the serial port as determined in step 2. The process will be shown in the terminal below.
 <img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/upload.JPG?raw=true">
 If it takes longer than ~30 seconds, try cancelling the command using Ctrl-C a couple times in the terminal window below and try again. If it continues to not work or give an error, you might have the wrong serial port, your firmware is outdated, or you have a SPIKE PRIME software window open.
 
