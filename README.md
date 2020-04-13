@@ -94,3 +94,7 @@ If it takes longer than ~30 seconds, try cancelling the command using Ctrl-C a c
 
 You can try the other commands in the list as needed.
 
+# Programming
+
+Here are some sample code: https://github.com/sanjayseshan/spikeprime-samples
+
