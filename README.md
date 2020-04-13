@@ -2,7 +2,7 @@
 
 This extension for VS Code will allow you to easily program the SPIKE PRIME in a micropython environment. Credit to @nutki for the prior work on actually transferring files to the hub.
 
-This tool was created by Sanjay Seshan for PrimeLessons.org. If there are any errors or you need additioanl help, please do not hesistate to contact me.
+This tool was created by Sanjay Seshan for PrimeLessons.org. If there are any errors or you need additional help, please do not hesistate to open and issue on this Github repository.
 
 ## Features
 
