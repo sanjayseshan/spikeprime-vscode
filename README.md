@@ -41,8 +41,8 @@ Derivatives such as Ubuntu will work also with these instructions.
 ## Installation
 1) Download the latest VS Code (currently 1.44.0) from https://code.visualstudio.com/ and install it (e.g. sudo dpkg -i code_1.44.0-XXX_amd64.deb or open with Software Installer)
 2) Download https://github.com/sanjayseshan/spikeprime-tools/releases/download/v0.0.3/spikeprime-tools.tgz and extract it. Run the file install.debian.sh in the directory to install to your home directory. Depending on your setup, you might be able to simply double-click the install.debian.sh file to run setup (use the Run in Terminal option). Otherwise, use terminal and run "bash install.debian.sh" in that directory. It will automatically install python3 and needed dependencies from apt. You will be asked for your [root] password as necessary.
-<img width="40%" src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/open-terminal.png?raw=true">
-<img width="40%" src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/terminal-linux.png?raw=true">
+<img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/open-terminal.png?raw=true">
+<img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/terminal-linux.png?raw=true">
 3) Download https://github.com/sanjayseshan/spikeprime-vscode/releases/download/v0.0.2/spikeprime-0.0.2.vsix
 4) Open VS Code and press Ctrl-Shift-P. Type in "Install from VSIX" and then select the spikeprime-0.0.2.vsix file you downloaded.
 <img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/linux-vscode1.png?raw=true">
