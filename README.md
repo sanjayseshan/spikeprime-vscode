@@ -16,8 +16,7 @@ Tested on Windows 10.
 3) Install the latest version of Python 3 from https://python.org/. Enable the "Add Python to PATH" option at the bottom of the install window and chose "Install Now" <img src="https://docs.python.org/3/_images/win_installer.png">
 4) Download https://github.com/sanjayseshan/spikeprime-tools/archive/v0.0.3.zip and unzip it. Run the file (double-click) install.windows.bat to install to your hard drive on C:\. If the installer fails, try running as Administrator. Windows Defender might flag it as an unrecognized installer. Just allow it to run. If it continues to fail, it is probably because you forgot to add Python to your path or you installed Python 2.
 5) Download https://github.com/sanjayseshan/spikeprime-vscode/releases/download/v0.0.2/spikeprime-0.0.2.vsix
-6) Open VS Code and press Ctrl-Shift-P. Type in "Install from VSIX" and then select the spikeprime-0.0.2.vsix file you downloaded.
-<img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/installvsix.JPG?raw=true">
+6) Open VS Code and press Ctrl-Shift-P. Type in "Install from VSIX" and then select the spikeprime-0.0.2.vsix file you downloaded. <img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/installvsix.JPG?raw=true">
 7) Restart your PC
 
 ## Your first program
@@ -83,11 +82,9 @@ Tested on MacOS 10.14 Mojave and 10.15 Catalina.
 
 ## Downloading to the hub
 1) Open terminal from Applications -> Utilities -> Terminal
-2) Run the following command: "ls /dev/tty.usb*"
-<img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/osx-term-usb1.png?raw=true">
+2) Run the following command: "ls /dev/tty.usb*" <img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/osx-term-usb1.png?raw=true">
 3) Plug in the SPIKE PRIME using USB
-4) Run the following command: "ls /dev/tty.usb*" again and see what was added to the list. That is your serial port id. For example, it might say "/dev/tty.usbmodem366C377532381".
-<img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/osx-term-usb2.png?raw=true">
+4) Run the following command: "ls /dev/tty.usb*" again and see what was added to the list. That is your serial port id. For example, it might say "/dev/tty.usbmodem366C377532381". <img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/osx-term-usb2.png?raw=true">
 5) Press Command-Shift-P and type "spike". Chose to "Upload to SPIKE PRIME". Enter in the program slot id you want to upload to (similar to the SPIKE PRIME software - between 1 and 19 inclusive) and the serial port as determined in step 2. The process will be shown in the terminal below.
 <img src="https://github.com/sanjayseshan/spikeprime-vscode/blob/master/pictures/vscode-upload-osx.png?raw=true">
 If it takes longer than ~30 seconds, try cancelling the command using Ctrl-C a couple times in the terminal window below and try again. If it continues to not work or give an error, you might have the wrong serial port, your firmware is outdated, or you have a SPIKE PRIME software window open.
