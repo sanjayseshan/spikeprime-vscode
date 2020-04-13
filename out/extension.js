@@ -13,8 +13,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // Import the module and reference it with the alias vscode in your code below
 const vscode = require("vscode");
 const fs = require("fs");
-//import * as serial from 'serialport';
-const SerialPort = require("serialport");
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 function activate(context) {
@@ -33,15 +31,7 @@ function activate(context) {
         // Display a message box to the user
         const slot = yield vscode.window.showInputBox({ prompt: 'Which slot should I upload to? (0-19)' });
         if (serial === "") {
-            let serials = yield SerialPort.list();
-            let lenserial = serials.length;
-            let i = 0;
-            let items = [];
-            while (i < lenserial) {
-                items.push(serials[i]['path'] + ' - ' + serials[i]['manufacturer'] + ' - ' + serials[i]['pnpId']);
-                i = i + 1;
-            }
-            serial = (yield vscode.window.showQuickPick(items, { placeHolder: 'Which serial port is the hub on?' })).split("-")[0].split(" ")[0];
+            serial = (yield vscode.window.showInputBox({ prompt: 'Which port is the hub on? (e.g. COM3, /dev/ttyACM0, /dev/tty.usbserialABC, etc.)' }));
         }
         console.log(serial);
         vscode.window.showInformationMessage('Uploading to hub at ' + serial + ' on slot ' + slot + '.');
@@ -63,15 +53,7 @@ function activate(context) {
         var _b;
         // Display a message box to the user
         if (serial === "") {
-            let serials = yield SerialPort.list();
-            let lenserial = serials.length;
-            let i = 0;
-            let items = [];
-            while (i < lenserial) {
-                items.push(serials[i]['path'] + ' - ' + serials[i]['manufacturer'] + ' - ' + serials[i]['pnpId']);
-                i = i + 1;
-            }
-            serial = (yield vscode.window.showQuickPick(items, { placeHolder: 'Which serial port is the hub on?' })).split("-")[0].split(" ")[0];
+            serial = (yield vscode.window.showInputBox({ prompt: 'Which port is the hub on? (e.g. COM3, /dev/ttyACM0, /dev/tty.usbserialABC, etc.)' }));
         }
         console.log(serial);
         // const terminal = vscode.window.createTerminal(`Ext Terminal #${NEXT_TERM_ID++}`);
@@ -94,15 +76,7 @@ function activate(context) {
         // Display a message box to the user
         const slot = yield vscode.window.showInputBox({ prompt: 'Which slot should I delete? (0-19)' });
         if (serial === "") {
-            let serials = yield SerialPort.list();
-            let lenserial = serials.length;
-            let i = 0;
-            let items = [];
-            while (i < lenserial) {
-                items.push(serials[i]['path'] + ' - ' + serials[i]['manufacturer'] + ' - ' + serials[i]['pnpId']);
-                i = i + 1;
-            }
-            serial = (yield vscode.window.showQuickPick(items, { placeHolder: 'Which serial port is the hub on?' })).split("-")[0].split(" ")[0];
+            serial = (yield vscode.window.showInputBox({ prompt: 'Which port is the hub on? (e.g. COM3, /dev/ttyACM0, /dev/tty.usbserialABC, etc.)' }));
         }
         console.log(serial);
         // const terminal = vscode.window.createTerminal(`Ext Terminal #${NEXT_TERM_ID++}`);
@@ -125,15 +99,7 @@ function activate(context) {
         // Display a message box to the user
         const slot = yield vscode.window.showInputBox({ prompt: 'Which program slot should I start? (0-19)' });
         if (serial === "") {
-            let serials = yield SerialPort.list();
-            let lenserial = serials.length;
-            let i = 0;
-            let items = [];
-            while (i < lenserial) {
-                items.push(serials[i]['path'] + ' - ' + serials[i]['manufacturer'] + ' - ' + serials[i]['pnpId']);
-                i = i + 1;
-            }
-            serial = (yield vscode.window.showQuickPick(items, { placeHolder: 'Which serial port is the hub on?' })).split("-")[0].split(" ")[0];
+            serial = (yield vscode.window.showInputBox({ prompt: 'Which port is the hub on? (e.g. COM3, /dev/ttyACM0, /dev/tty.usbserialABC, etc.)' }));
         }
         console.log(serial);
         // const terminal = vscode.window.createTerminal(`Ext Terminal #${NEXT_TERM_ID++}`);
@@ -155,17 +121,8 @@ function activate(context) {
         var _e;
         // Display a message box to the user
         if (serial === "") {
-            let serials = yield SerialPort.list();
-            let lenserial = serials.length;
-            let i = 0;
-            let items = [];
-            while (i < lenserial) {
-                items.push(serials[i]['path'] + ' - ' + serials[i]['manufacturer'] + ' - ' + serials[i]['pnpId']);
-                i = i + 1;
-            }
-            serial = (yield vscode.window.showQuickPick(items, { placeHolder: 'Which serial port is the hub on?' })).split("-")[0].split(" ")[0];
+            serial = (yield vscode.window.showInputBox({ prompt: 'Which port is the hub on? (e.g. COM3, /dev/ttyACM0, /dev/tty.usbserialABC, etc.)' }));
         }
-        console.log(serial);
         // const terminal = vscode.window.createTerminal(`Ext Terminal #${NEXT_TERM_ID++}`);
         var currentlyOpenTabfilePath = (_e = vscode.window.activeTextEditor) === null || _e === void 0 ? void 0 : _e.document.uri.fsPath;
         vscode.window.showInformationMessage('Stopping program at hub at ' + serial + '.');
@@ -187,17 +144,8 @@ function activate(context) {
         const slot = yield vscode.window.showInputBox({ prompt: 'Which program slot should I move? (0-19)' });
         const slot2 = yield vscode.window.showInputBox({ prompt: 'Which program slot should I move it to? (0-19)' });
         if (serial === "") {
-            let serials = yield SerialPort.list();
-            let lenserial = serials.length;
-            let i = 0;
-            let items = [];
-            while (i < lenserial) {
-                items.push(serials[i]['path'] + ' - ' + serials[i]['manufacturer'] + ' - ' + serials[i]['pnpId']);
-                i = i + 1;
-            }
-            serial = (yield vscode.window.showQuickPick(items, { placeHolder: 'Which serial port is the hub on?' })).split("-")[0].split(" ")[0];
+            serial = (yield vscode.window.showInputBox({ prompt: 'Which port is the hub on? (e.g. COM3, /dev/ttyACM0, /dev/tty.usbserialABC, etc.)' }));
         }
-        console.log(serial);
         // const terminal = vscode.window.createTerminal(`Ext Terminal #${NEXT_TERM_ID++}`);
         var currentlyOpenTabfilePath = (_f = vscode.window.activeTextEditor) === null || _f === void 0 ? void 0 : _f.document.uri.fsPath;
         terminal.show();
@@ -217,17 +165,8 @@ function activate(context) {
         var _g;
         // Display a message box to the user
         if (serial === "") {
-            let serials = yield SerialPort.list();
-            let lenserial = serials.length;
-            let i = 0;
-            let items = [];
-            while (i < lenserial) {
-                items.push(serials[i]['path'] + ' - ' + serials[i]['manufacturer'] + ' - ' + serials[i]['pnpId']);
-                i = i + 1;
-            }
-            serial = (yield vscode.window.showQuickPick(items, { placeHolder: 'Which serial port is the hub on?' })).split("-")[0].split(" ")[0];
+            serial = (yield vscode.window.showInputBox({ prompt: 'Which port is the hub on? (e.g. COM3, /dev/ttyACM0, /dev/tty.usbserialABC, etc.)' }));
         }
-        console.log(serial);
         // const terminal = vscode.window.createTerminal(`Ext Terminal #${NEXT_TERM_ID++}`);
         var currentlyOpenTabfilePath = (_g = vscode.window.activeTextEditor) === null || _g === void 0 ? void 0 : _g.document.uri.fsPath;
         vscode.window.showInformationMessage('Working on hub at ' + serial + '.');
@@ -273,17 +212,17 @@ function activate(context) {
         }
     }));
     let disposable10 = vscode.commands.registerCommand('spikeprime.setport', () => __awaiter(this, void 0, void 0, function* () {
-        let serials = yield SerialPort.list();
-        let lenserial = serials.length;
-        let i = 0;
-        let items = [];
-        while (i < lenserial) {
-            items.push(serials[i]['path'] + ' - ' + serials[i]['manufacturer'] + ' - ' + serials[i]['pnpId']);
-            i = i + 1;
-        }
-        serial = (yield vscode.window.showQuickPick(items, { placeHolder: 'Which serial port is the hub on?' })).split("-")[0].split(" ")[0];
-        console.log(serial);
-        // serial = await vscode.window.showInputBox({ prompt: 'Which port is the hub on? (e.g. COM3, /dev/ttyACM0, /dev/tty.usbserialABC, etc.)'}) as string;
+        // let serials=await SerialPort.list();
+        // let lenserial = serials.length;
+        // let i = 0;
+        // let items = []
+        // while (i < lenserial) {
+        // 	items.push(serials[i]['path'] +' - '+ serials[i]['manufacturer'] +' - '+serials[i]['pnpId']);
+        // 	i=i+1;
+        // }
+        // serial = (await vscode.window.showQuickPick(items, {placeHolder: 'Which serial port is the hub on?'}) as string).split("-")[0].split(" ")[0];
+        // console.log(serial);
+        serial = (yield vscode.window.showInputBox({ prompt: 'Which port is the hub on? (e.g. COM3, /dev/ttyACM0, /dev/tty.usbserialABC, etc.)' }));
     }));
     context.subscriptions.push(disposable);
     context.subscriptions.push(disposable2);

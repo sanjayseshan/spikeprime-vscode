@@ -2,9 +2,6 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 import * as fs from 'fs';
-//import * as serial from 'serialport';
-import SerialPort = require('serialport');
-import { formatWithOptions } from 'util';
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -27,15 +24,7 @@ export function activate(context: vscode.ExtensionContext) {
 		// Display a message box to the user
 		const slot = await vscode.window.showInputBox({ prompt: 'Which slot should I upload to? (0-19)' });
 		if (serial === "") {
-			let serials=await SerialPort.list();
-			let lenserial = serials.length;
-			let i = 0;
-			let items = []
-			while (i < lenserial) {
-				items.push(serials[i]['path'] +' - '+ serials[i]['manufacturer'] +' - '+serials[i]['pnpId']);
-				i=i+1;
-			}
-			serial = (await vscode.window.showQuickPick(items, {placeHolder: 'Which serial port is the hub on?'}) as string).split("-")[0].split(" ")[0];
+			serial = await vscode.window.showInputBox({ prompt: 'Which port is the hub on? (e.g. COM3, /dev/ttyACM0, /dev/tty.usbserialABC, etc.)'}) as string;
 		}
 		console.log(serial);
 
@@ -58,15 +47,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 		// Display a message box to the user
 		if (serial === "") {
-			let serials=await SerialPort.list();
-			let lenserial = serials.length;
-			let i = 0;
-			let items = []
-			while (i < lenserial) {
-				items.push(serials[i]['path'] +' - '+ serials[i]['manufacturer'] +' - '+serials[i]['pnpId']);
-				i=i+1;
-			}
-			serial = (await vscode.window.showQuickPick(items, {placeHolder: 'Which serial port is the hub on?'}) as string).split("-")[0].split(" ")[0];
+			serial = await vscode.window.showInputBox({ prompt: 'Which port is the hub on? (e.g. COM3, /dev/ttyACM0, /dev/tty.usbserialABC, etc.)'}) as string;
 		}
 		console.log(serial);
 		// const terminal = vscode.window.createTerminal(`Ext Terminal #${NEXT_TERM_ID++}`);
@@ -89,15 +70,7 @@ export function activate(context: vscode.ExtensionContext) {
 		// Display a message box to the user
 		const slot = await vscode.window.showInputBox({ prompt: 'Which slot should I delete? (0-19)' });
 		if (serial === "") {
-			let serials=await SerialPort.list();
-			let lenserial = serials.length;
-			let i = 0;
-			let items = []
-			while (i < lenserial) {
-				items.push(serials[i]['path'] +' - '+ serials[i]['manufacturer'] +' - '+serials[i]['pnpId']);
-				i=i+1;
-			}
-			serial = (await vscode.window.showQuickPick(items, {placeHolder: 'Which serial port is the hub on?'}) as string).split("-")[0].split(" ")[0];
+			serial = await vscode.window.showInputBox({ prompt: 'Which port is the hub on? (e.g. COM3, /dev/ttyACM0, /dev/tty.usbserialABC, etc.)'}) as string;
 		}
 		console.log(serial);
 		// const terminal = vscode.window.createTerminal(`Ext Terminal #${NEXT_TERM_ID++}`);
@@ -120,15 +93,7 @@ export function activate(context: vscode.ExtensionContext) {
 		// Display a message box to the user
 		const slot = await vscode.window.showInputBox({ prompt: 'Which program slot should I start? (0-19)' });
 		if (serial === "") {
-			let serials=await SerialPort.list();
-			let lenserial = serials.length;
-			let i = 0;
-			let items = []
-			while (i < lenserial) {
-				items.push(serials[i]['path'] +' - '+ serials[i]['manufacturer'] +' - '+serials[i]['pnpId']);
-				i=i+1;
-			}
-			serial = (await vscode.window.showQuickPick(items, {placeHolder: 'Which serial port is the hub on?'}) as string).split("-")[0].split(" ")[0];
+			serial = await vscode.window.showInputBox({ prompt: 'Which port is the hub on? (e.g. COM3, /dev/ttyACM0, /dev/tty.usbserialABC, etc.)'}) as string;
 		}
 		console.log(serial);
 		// const terminal = vscode.window.createTerminal(`Ext Terminal #${NEXT_TERM_ID++}`);
@@ -150,18 +115,8 @@ export function activate(context: vscode.ExtensionContext) {
 
 		// Display a message box to the user
 		if (serial === "") {
-			let serials=await SerialPort.list();
-			let lenserial = serials.length;
-			let i = 0;
-			let items = []
-			while (i < lenserial) {
-				items.push(serials[i]['path'] +' - '+ serials[i]['manufacturer'] +' - '+serials[i]['pnpId']);
-				i=i+1;
-			}
-			serial = (await vscode.window.showQuickPick(items, {placeHolder: 'Which serial port is the hub on?'}) as string).split("-")[0].split(" ")[0];
+			serial = await vscode.window.showInputBox({ prompt: 'Which port is the hub on? (e.g. COM3, /dev/ttyACM0, /dev/tty.usbserialABC, etc.)'}) as string;
 		}
-		console.log(serial);
-
 		// const terminal = vscode.window.createTerminal(`Ext Terminal #${NEXT_TERM_ID++}`);
 		var currentlyOpenTabfilePath = vscode.window.activeTextEditor?.document.uri.fsPath;
 		vscode.window.showInformationMessage('Stopping program at hub at '+serial+'.');
@@ -183,17 +138,8 @@ export function activate(context: vscode.ExtensionContext) {
 		const slot = await vscode.window.showInputBox({ prompt: 'Which program slot should I move? (0-19)' });
 		const slot2 = await vscode.window.showInputBox({ prompt: 'Which program slot should I move it to? (0-19)' });
 		if (serial === "") {
-			let serials=await SerialPort.list();
-			let lenserial = serials.length;
-			let i = 0;
-			let items = []
-			while (i < lenserial) {
-				items.push(serials[i]['path'] +' - '+ serials[i]['manufacturer'] +' - '+serials[i]['pnpId']);
-				i=i+1;
-			}
-			serial = (await vscode.window.showQuickPick(items, {placeHolder: 'Which serial port is the hub on?'}) as string).split("-")[0].split(" ")[0];
+			serial = await vscode.window.showInputBox({ prompt: 'Which port is the hub on? (e.g. COM3, /dev/ttyACM0, /dev/tty.usbserialABC, etc.)'}) as string;
 		}
-		console.log(serial);
 
 		// const terminal = vscode.window.createTerminal(`Ext Terminal #${NEXT_TERM_ID++}`);
 		var currentlyOpenTabfilePath = vscode.window.activeTextEditor?.document.uri.fsPath;
@@ -214,17 +160,8 @@ export function activate(context: vscode.ExtensionContext) {
 
 		// Display a message box to the user
 		if (serial === "") {
-			let serials=await SerialPort.list();
-			let lenserial = serials.length;
-			let i = 0;
-			let items = []
-			while (i < lenserial) {
-				items.push(serials[i]['path'] +' - '+ serials[i]['manufacturer'] +' - '+serials[i]['pnpId']);
-				i=i+1;
-			}
-			serial = (await vscode.window.showQuickPick(items, {placeHolder: 'Which serial port is the hub on?'}) as string).split("-")[0].split(" ")[0];
+			serial = await vscode.window.showInputBox({ prompt: 'Which port is the hub on? (e.g. COM3, /dev/ttyACM0, /dev/tty.usbserialABC, etc.)'}) as string;
 		}
-		console.log(serial);
 
 		// const terminal = vscode.window.createTerminal(`Ext Terminal #${NEXT_TERM_ID++}`);
 		var currentlyOpenTabfilePath = vscode.window.activeTextEditor?.document.uri.fsPath;
@@ -273,17 +210,17 @@ export function activate(context: vscode.ExtensionContext) {
 	});
 
 	let disposable10 = vscode.commands.registerCommand('spikeprime.setport', async () => {
-		let serials=await SerialPort.list();
-		let lenserial = serials.length;
-		let i = 0;
-		let items = []
-		while (i < lenserial) {
-			items.push(serials[i]['path'] +' - '+ serials[i]['manufacturer'] +' - '+serials[i]['pnpId']);
-			i=i+1;
-		}
-		serial = (await vscode.window.showQuickPick(items, {placeHolder: 'Which serial port is the hub on?'}) as string).split("-")[0].split(" ")[0];
-		console.log(serial);
-		// serial = await vscode.window.showInputBox({ prompt: 'Which port is the hub on? (e.g. COM3, /dev/ttyACM0, /dev/tty.usbserialABC, etc.)'}) as string;
+		// let serials=await SerialPort.list();
+		// let lenserial = serials.length;
+		// let i = 0;
+		// let items = []
+		// while (i < lenserial) {
+		// 	items.push(serials[i]['path'] +' - '+ serials[i]['manufacturer'] +' - '+serials[i]['pnpId']);
+		// 	i=i+1;
+		// }
+		// serial = (await vscode.window.showQuickPick(items, {placeHolder: 'Which serial port is the hub on?'}) as string).split("-")[0].split(" ")[0];
+		// console.log(serial);
+		serial = await vscode.window.showInputBox({ prompt: 'Which port is the hub on? (e.g. COM3, /dev/ttyACM0, /dev/tty.usbserialABC, etc.)'}) as string;
 	});
 
 	context.subscriptions.push(disposable);
