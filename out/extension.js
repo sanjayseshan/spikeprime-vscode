@@ -109,11 +109,11 @@ function activate(context) {
         terminal.show(true);
         if (fs.existsSync("/bin/sh")) {
             vscode.window.showInformationMessage("UNIX");
-            terminal.sendText("python3 ~/spiketools/spikejsonrpc.py -t " + serial + " start " + slot);
+            terminal.sendText("python3 ~/spiketools/spikejsonrpc.py -t " + serial + " start " + slot + "; python3 ~/spiketools/readserial.py");
         }
         else {
             vscode.window.showInformationMessage("WINDOWS");
-            terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t " + serial + " start " + slot);
+            terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t " + serial + " start " + slot + "; python C:\\\spiketools\\\readserial.py");
         }
     }));
     let disposable5 = vscode.commands.registerCommand('spikeprime.stop', () => __awaiter(this, void 0, void 0, function* () {

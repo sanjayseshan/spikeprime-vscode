@@ -1,4 +1,4 @@
-# LEGO SPIKE PRIME Extension for VS Code (v0.0.2)
+# LEGO SPIKE PRIME Extension for VS Code (v0.1.0)
 
 This extension for VS Code will allow you to easily program the SPIKE PRIME in a micropython environment. Credit to @nutki for the prior work on actually transferring files to the hub.
 
