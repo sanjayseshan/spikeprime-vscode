@@ -113,7 +113,7 @@ function activate(context) {
         }
         else {
             vscode.window.showInformationMessage("WINDOWS");
-            terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t " + serial + " start " + slot + "; python C:\\\spiketools\\\readserial.py");
+            terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t " + serial + " start " + slot + "; python C:\\\spiketools\\\readserial.py " + serial);
         }
     }));
     let disposable5 = vscode.commands.registerCommand('spikeprime.stop', () => __awaiter(this, void 0, void 0, function* () {
