@@ -103,7 +103,7 @@ export function activate(context: vscode.ExtensionContext) {
 		terminal.show(true);
 		if (fs.existsSync("/bin/sh")) {
 			vscode.window.showInformationMessage("UNIX");
-			terminal.sendText("python3 ~/spiketools/spikejsonrpc.py -t "+serial+" start "+slot+"; python3 ~/spiketools/readserial.py");
+			terminal.sendText("python3 ~/spiketools/spikejsonrpc.py -t "+serial+" start "+slot+"; python3 ~/spiketools/readserial.py "+serial);
 		} else {
 			vscode.window.showInformationMessage("WINDOWS");
 			terminal.sendText("python C:\\\spiketools\\\spikejsonrpc.py -t "+serial+" start "+slot+"; python C:\\\spiketools\\\readserial.py "+serial);
